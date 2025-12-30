@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('product_price_history', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('product_id');
-            $table->float('old_price');
+            $table->float('old_price')->unsigned();
             $table->index('product_id', 'product_price_change_idx');
             $table->foreign('product_id', 'product_price_change_fk')->on('products')->references('id');
             $table->timestamps();

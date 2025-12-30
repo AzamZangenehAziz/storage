@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('sku')->unique();
             $table->string('name');
             $table->unsignedBigInteger('stock')->nullable(false);
-            $table->float('price')->nullable(false);
+            $table->float('price')->unsigned()->nullable(false);
             $table->timestamps();
             $table->softDeletes();
         });
